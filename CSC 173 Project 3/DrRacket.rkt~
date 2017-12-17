@@ -1,0 +1,18 @@
+#lang slideshow
+;append function
+(define (appendList lhs rhs)
+  (if (empty? lhs)
+      rhs
+      (cons (first lhs) (appendList (rest lhs) rhs))))
+
+(appendList '(a b c d) '(e f g h))
+
+;list reverse function
+(define (reverseList l)
+  (if (null? l)
+     '()
+     (append (reverseList (rest l)) (list (first l)))
+  )
+)
+
+(reverseList '(a b c d))
